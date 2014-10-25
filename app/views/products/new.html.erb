@@ -1,0 +1,26 @@
+<h1>New product</h1>
+
+<%= form_for @product do |f| %>
+<div>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+
+	<%= f.label :description %>
+	<%= f.text_field :description %>
+
+	<%= f.label :price %>
+	<%= f.text_field :price %>
+
+	<%= f.label :photo %>
+	<%= f.text_field :photo %>
+
+
+	<%= f.label :options %>
+	<%= f.text_field :options %>
+</div>
+<div>
+
+	<%= f.submit %>
+</div>
+
+<%end%>

@@ -1,0 +1,47 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+body {
+	
+	background-image: url("http://www.featurepics.com/FI/Thumb300/20101016/Comic-Book-1673541.jpg");
+	background-image: no-repeat;
+	background-attachment: fixed;
+    background-position: center;
+	
+}
+
+.navabar-inverse .navabar-nav > li > a {
+	color :#cfe8ec;
+}
+
+.products p{
+	color: black;
+}
+.products h1{
+	color: white;
+}
+.products h6{
+	color: black;
+}
+.products img{
+	display: block;
+    margin-left: auto;
+    margin-right: auto; 
+}
+a {
+	color: black;
+}
+
+.thumb {
+	border: 5px solid #222222;
+	color: black;
+	text-align: center;
+	border-radius: 25px;
+	background-color: #cfe8ec;
+}
+
+a:hover{
+	text-decoration: none;
+}
