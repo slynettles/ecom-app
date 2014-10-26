@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+h1{
+	color: white;
+	font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans serif;
+	font-size: 80px;
+	text-outline: black;
+	text-align: center;
+	text-shadow: -3px 0 black, 0 8px black, 8px 0 black, 0 -3px black;
+}
 
 body {
 	
@@ -12,16 +20,14 @@ body {
 	
 }
 
-.navabar-inverse .navabar-nav > li > a {
+.navbar navbar-right> li > a {
 	color :#cfe8ec;
 }
 
 .products p{
 	color: black;
 }
-.products h1{
-	color: white;
-}
+
 .products h6{
 	color: black;
 }
@@ -30,6 +36,7 @@ body {
     margin-left: auto;
     margin-right: auto; 
 }
+
 a {
 	color: black;
 }
@@ -39,7 +46,7 @@ a {
 	color: black;
 	text-align: center;
 	border-radius: 25px;
-	background-color: #cfe8ec;
+	background-color: #f8f8f8;
 }
 
 a:hover{
