@@ -7,5 +7,6 @@ class ApplicationController < ActionController::Base
 
   def get_products
   	@products = Product.all 
+  	@categories = Category.all
   end
 end

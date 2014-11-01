@@ -1,18 +1,37 @@
-
 <h1><%= @product.name %></h1>
-<h3><%= @product.description %></h3>
-<h3>Options:</h3>
+<% if @product.vendor %>
+	<h2><%= @product.vendor.name %><h2>
+<%end%>
+<h2><%= @product.description %>
+	<% if @product.product_options %>
+<h3>Options :</h3>
 <ul>
-	<% @product.product_options.each do |product_option| %>
-		<li><%= product_option.name %></li>
-		<% end %>
-	</ul>
-	
-	<img src="<%= @product.photo %>" height="200" width="200" />
-	<p><a href="/products/<%= @product.id %>/edit">
-<h3><%= @product.price %></h3>
-<p>Edit Item</p></a>
+ 	<% @products.product_options.each do |product_option| %>
+  	<li><%= product_option.name %></li>
+  	<%end%>
+
+</ul>
+<%end%>
+<h5><%= @product.sales_price %></h5>
+<h5><%= @product.sales_tax %></h5>
+<h5><%= @product.total_price %></h5>
+<img src="<%= @product.photo %>" height="200" width="200"/>
+<p><a href="/products/<%= @product.id %>/edit">
+	<p> Edit Item </p></a>
+	</br>
 </br>
 </br>
 
-<a href="/products">Go home</a>
+
+<%= form_for @order do |f| %>
+
+	
+	<%= f.label :quantity %>
+	<%= f.text_field :quantity %>
+	
+	<%= f.submit "Buy Me Superhero!" %>
+	<%= f.hidden_field :product_id, value: @product.id %>
+	
+<%end%>
+<a href="/">Go home</a>
+

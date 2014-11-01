@@ -1,3 +1,23 @@
+<div class="container">
+  <div class="row">
+ <% @products.each do |product| %>
+  <div class="col-md-4">
+    <div class="thumb">
+    <a href="/products/<%= product.id %>">
+    <p><%= product.name %></p>
+
+    <p><img src="<%= product.photo %>" height="200" width="200"/></p>
+   
+    <p><%= number_to_currency(product.price) %></p>
+    </div>
+  </a>
+    <p>
+      <a href="/products/<%= product.id %>/edit">Edit</a>
+      <a data-confirm= "Are you sure?" data-method="delete" href="/products/<%= product.id %>" rel="nofollow">Delete</a>
+    </p>
+  </div>
+<%end%>
+
 <div class="products">
 
 <h6><a href= "/products/new">Add a new product</a></h6>
