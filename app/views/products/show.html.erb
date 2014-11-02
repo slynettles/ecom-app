@@ -16,13 +16,15 @@
 <h5><%= @product.sales_tax %></h5>
 <h5><%= @product.total_price %></h5>
 <img src="<%= @product.photo %>" height="200" width="200"/>
+<% if user_signed_in && current_user.admin? %>
 <p><a href="/products/<%= @product.id %>/edit">
 	<p> Edit Item </p></a>
+<%end%>
 	</br>
 </br>
 </br>
 
-
+<% if user_signed_in? %>
 <%= form_for @carted_product do |f| %>
 
 	
@@ -33,6 +35,7 @@
 
 	<%= f.submit "Add To Cart" %>
 	
+<%end%>
 <%end%>
 
 <a href="/">Go home</a>

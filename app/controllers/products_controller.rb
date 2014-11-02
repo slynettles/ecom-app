@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+	before_action :authenticate_admin!, :only => [:edit, :destroy]
 
 	def index
 		@products = Product.all 
@@ -37,7 +38,7 @@ class ProductsController < ApplicationController
 	end
 
 	def edit
-	 	@product = Product.find_by(:id => params[:id])
+		@product = Product.find_by(:id => params[:id])
 	end
 
 	def update
@@ -53,4 +54,8 @@ class ProductsController < ApplicationController
 		flash[:danger] = "Product successfully deleted!"
 		redirect_to '/products'
 	end
+
+	private
+
+	
 end 

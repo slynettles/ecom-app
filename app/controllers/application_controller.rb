@@ -10,3 +10,10 @@ class ApplicationController < ActionController::Base
   	@categories = Category.all
   end
 end
+
+def authenticate_admin!
+		unless user_signed_in? && current_user.admin?
+			flash[:warning] = "Access Denied"
+			redirect_to '/'
+		end
+	end

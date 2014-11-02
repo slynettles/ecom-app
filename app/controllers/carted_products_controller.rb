@@ -1,8 +1,11 @@
 class CartedProductsController < ApplicationController
+	before_action :authenticate_user!#, :only => [:index, :create]
+
 	def index
 		@order = Order.find_by(:user_id => current_user.id, :status => "cart")
 		@carted_products = @order.carted_products
-	end
+
+		end
 
 	def create
 		if Order.find_by(:user_id => current_user.id, :status => "cart")
