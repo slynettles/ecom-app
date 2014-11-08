@@ -22,6 +22,6 @@ ProductOption.create!([
   {name: " yellow", product_id: 14},
   {name: " grey", product_id: 14}
 ])
-Vendor.create!([
-  {name: "Captain Marvel Tshirt", vendor_id: 1}
-])
+# Vendor.create!([
+# #   {name: "Captain Marvel Tshirt", vendor_id: 1}
+# ])

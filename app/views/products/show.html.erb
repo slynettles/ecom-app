@@ -1,7 +1,9 @@
 <h1><%= @product.name %></h1>
+<div class='jumbo'>
 <% if @product.vendor %>
 	<h2><%= @product.vendor.name %><h2>
 <%end%>
+<img src="<%= @product.photo %>" height="200" width="200"/>
 <h2><%= @product.description %>
 	<% if @product.product_options %>
 <h3>Options :</h3>
@@ -15,8 +17,8 @@
 <h5><%= @product.sales_price %></h5>
 <h5><%= @product.sales_tax %></h5>
 <h5><%= @product.total_price %></h5>
-<img src="<%= @product.photo %>" height="200" width="200"/>
-<% if user_signed_in && current_user.admin? %>
+
+<% if user_signed_in? && current_user.admin? %>
 <p><a href="/products/<%= @product.id %>/edit">
 	<p> Edit Item </p></a>
 <%end%>
@@ -37,6 +39,7 @@
 	
 <%end%>
 <%end%>
+</div>
 
 <a href="/">Go home</a>
 

@@ -1,6 +1,6 @@
 <h1>Checkout</h1>
 
-<table>
+<table class="table table-bordered">
 	<tr>
 		<th>Product</th>
 		<th>Quantity</th>
@@ -13,13 +13,15 @@
 		<td><%= carted_product.quantity %></td>
 		<td><%= number_to_currency(carted_product.price) %></td>
 	</tr>
-
+</table>
 	<% end %>
 
-	</table>
+
 
 	<h3>Total:  <%= number_to_currency(@order.total_price) %></h3>
+	
 
 	<%= form_for @order do |f| %>
 		<%= f.submit "Complete Purchase" %>
+
 	<% end %>
