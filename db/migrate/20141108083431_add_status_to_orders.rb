@@ -1,5 +1,6 @@
 class AddStatusToOrders < ActiveRecord::Migration
   def change
-    add_column :create_orders, :status, :string
+  	rename_table :create_orders, :orders
+    add_column :orders, :status, :string
   end
 end
